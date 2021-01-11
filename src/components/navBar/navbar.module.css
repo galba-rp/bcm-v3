@@ -1,0 +1,9 @@
+.Nav {
+    text-align: center;
+}
+.NavItems{
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin: 0 auto 50px;
+}

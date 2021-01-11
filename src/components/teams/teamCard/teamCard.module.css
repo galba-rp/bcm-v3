@@ -1,0 +1,9 @@
+.card {
+    width: 18rem;
+}
+.cards {
+    margin-top: 2em;
+}
+.card-title{
+    text-align: center;
+}

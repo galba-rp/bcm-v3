@@ -1,0 +1,16 @@
+.Li{
+    list-style-type: none;
+    margin: 0 20px;
+    transition: all .5s
+    
+}
+.Link {
+    font-family: 'Roboto';
+    text-decoration: none;
+    color: rgb(95, 94, 94);
+    font-size: 1em;
+}
+
+.Li:hover {
+    transform: scale(1.2);
+}
