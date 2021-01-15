@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from "../../../components/UI/modal/modal";
 import * as actionCreators from "../../../store/actions/index";
+import Button from "../../UI/button/button";
 
 class Team extends Component {
   componentDidMount() {
-    console.log("TEAMS did mount");
     const myKey = this.props.match.params.teamId;
     console.log(myKey);
   }
+  onSelectPlayer = (player,game) => {
+    this.props.openModal();
+    this.props.selectPlayer(player, game)
+  }
 
   render() {
-    console.log(this.props.modal);
     const players = this.props.players.map((player, id) => {
       return (
         <tr key={"player" + id}>
@@ -19,7 +22,7 @@ class Team extends Component {
           {player.games.map((game) => (
             <td
               key={player.id.toString() + game.id.toString()}
-              onClick={() => this.props.onModalState(player.id, game.id)}
+              onClick={() => this.onSelectPlayer(player.id, game.id)}
             >
               {game.game}
             </td>
@@ -31,9 +34,10 @@ class Team extends Component {
     return (
       <div>
         <Modal
-          show={this.props.modal.state}
+          show={this.props.modal}
           close={this.props.onModalclose}
           choose={(val) => this.props.onPlaying(val)}
+          messageId={"team"}
         />
         <table className="table table-bordered">
           <thead>
@@ -50,6 +54,9 @@ class Team extends Component {
           </thead>
           <tbody>{players}</tbody>
         </table>
+        <Button btnType={"MediumButton"} disabled={false}>
+          Sauvegarder
+        </Button>
       </div>
     );
   }
@@ -58,7 +65,7 @@ class Team extends Component {
 const mapStateToProps = (state) => {
   return {
     playing: state.players.playing,
-    modal: state.players.modal,
+    modal: state.modal.modal,
     players: state.players.players,
     dts: state.players.dts,
   };
@@ -66,8 +73,9 @@ const mapStateToProps = (state) => {
 
 const maspDispatchToProps = (dispatch) => {
   return {
-    onModalState: (player, game) =>
-      dispatch(actionCreators.openModal(player, game)),
+    selectPlayer: (player, game) =>
+    dispatch(actionCreators.selectPlayer(player, game)),
+    openModal: () => dispatch(actionCreators.openModal()),
     onModalclose: () => dispatch(actionCreators.closeModal()),
     onPlaying: (val) => dispatch(actionCreators.selectAvailability(val)),
   };

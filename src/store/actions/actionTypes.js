@@ -1,5 +1,9 @@
 export const SELECT_AVAILABILITY = "SELECT_AVAILABILITY";
-export const MODAL_STATE = "MODAL_STATE";
+export const PLAYER_AVAILABILITY = "PLAYER_AVAILABILITY";
 export const CLOSE_MODAL = "CLOSE_MODAL";
 export const SET_TEAMS_INFO = "SET_TEAMS_INFO";
-   
+export const GET_FORM_INPUT = "GET_FORM_INPUT";
+export const SET_PLAYER_INFO = "SET_PLAYER_INFO";
+export const PLAYER_SAVED = "PLAYER_SAVED";
+export const OPEN_MODAL  = "OPEN_MODAL"
+export const API_RESPONSE  = "API_RESPONSE"

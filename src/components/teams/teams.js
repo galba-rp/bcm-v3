@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TeamCard from "./teamCard/teamCard";
 import { connect } from "react-redux";
-import * as teamsActions from "../../store/actions/teams";
+import * as teamsActions from "../../store/actions/teamsAct";
 
 
 class Teams extends Component {

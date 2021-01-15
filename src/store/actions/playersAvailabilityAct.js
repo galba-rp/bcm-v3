@@ -12,9 +12,9 @@ export const closeModal = () => {
     }
 }
 
-export const openModal = (vx, vy) => {
+export const selectPlayer = (vx, vy) => {
     return {
-        type: actionTypes.MODAL_STATE,
+        type: actionTypes.PLAYER_AVAILABILITY,
         x: vx,
         y: vy
     }

@@ -1,0 +1,43 @@
+.MediumButton:disabled {
+    background-color: rgb(113, 117, 121);
+    cursor: not-allowed;
+}
+.Danger {
+    font-size: 1.2em;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Changa', cursive;
+    background-color: red; 
+}
+
+.LargeButton{
+    background-color: rgb(113, 117, 121);
+    font-size: 3em;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: 'Changa', cursive;
+    cursor: pointer;
+}
+
+.LargeButton:hover{ 
+    background-color:rgb(8, 184, 116);
+}
+
+.MediumButton{
+    background-color: rgb(8, 184, 116);
+    font-size: 1.2em;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Changa', cursive;
+    color: white;
+    cursor: pointer;
+}
+@media all and (max-height: 760px){
+    .MediumButton{
+        font-size: 1em;
+        padding: 6px;
+        border-radius: 5px;
+    }
+}
+
+

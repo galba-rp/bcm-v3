@@ -64,9 +64,6 @@ const initialState = {
     { id: 2, date: " 15/11", game: "Meucon - Guer" },
     { id: 3, date: " 11/12", game: "Meucon - St.Ave" },
   ],
-  modal: {
-    state: false,
-  },
   playing: { x: 0, y: null },
 };
 
@@ -79,25 +76,13 @@ const reducer = (state = initialState, action) => {
         ...state,
         players: players,
       };
-    case actionTypes.MODAL_STATE:
+    case actionTypes.PLAYER_AVAILABILITY:
       return {
         ...state,
         playing: {
           ...state.playing,
           x: [action.x],
           y: [action.y],
-        },
-        modal: {
-          ...state.modal,
-          state: true,
-        },
-      };
-    case actionTypes.CLOSE_MODAL:
-      return {
-        ...state,
-        modal: {
-          ...state.modal,
-          state: false,
         },
       };
     default:
