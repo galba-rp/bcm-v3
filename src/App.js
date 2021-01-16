@@ -6,6 +6,7 @@ import Teams from "./components/teams/teams";
 import Team from "./components/teams/team/team";
 import CreateTeam from "./containers/createTeam/CreateTeam";
 import CreatePlayer from "./components/players/createPlayer/createPlayer";
+import Players from './components/players/players';
 
 class App extends Component {
   state = {};
@@ -15,7 +16,8 @@ class App extends Component {
         <BrowserRouter>
           <Header/>
           <Switch>
-          <Route path="/new_player" component={CreatePlayer}/>
+            <Route path="/new_player" component={CreatePlayer}/>
+            <Route path="/players" component={Players}/>
             <Route path="/new_team" component={CreateTeam}/>
             <Route path="/teams" component={Teams} />
             <Route path="/team/:teamId" component={Team} />

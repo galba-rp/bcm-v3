@@ -5,5 +5,5 @@ export const SET_TEAMS_INFO = "SET_TEAMS_INFO";
 export const GET_FORM_INPUT = "GET_FORM_INPUT";
 export const SET_PLAYER_INFO = "SET_PLAYER_INFO";
 export const PLAYER_SAVED = "PLAYER_SAVED";
-export const OPEN_MODAL  = "OPEN_MODAL"
-export const API_RESPONSE  = "API_RESPONSE"
+export const OPEN_MODAL  = "OPEN_MODAL";
+export const API_RESPONSE  = "API_RESPONSE";

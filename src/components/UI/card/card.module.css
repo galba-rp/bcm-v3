@@ -1,0 +1,9 @@
+.Card {
+    width: 18rem;
+}
+.Cards {
+    margin-top: 2em;
+}
+.Card-title{
+    text-align: center;
+}

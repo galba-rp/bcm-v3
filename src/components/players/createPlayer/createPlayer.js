@@ -8,24 +8,14 @@ import Modal from "../../UI/modal/modal";
 
 const CreatePlayer = (props) => {
   const { register, handleSubmit, errors } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (data, e) => {
+    props.sendInfo(data);
+    props.openModal();
+    e.target.reset();
   };
 
-  // const onSubmitHandler = () => {
-  //   const info = {
-  //     name: this.props.name,
-  //     surname: this.props.surname,
-  //     email: this.props.email,
-  //     tel: this.props.tel,
-  //   };
-
-  //   this.props.sendInfo(info);
-  //   this.props.openModal();
-  // };
-
-  const onModalClos = () => {
-    this.props.closeModal();
+  const onModalClose = () => {
+    props.closeModal();
   };
 
   return (
@@ -36,7 +26,6 @@ const CreatePlayer = (props) => {
           id="name"
           name="name"
           placeholder="Prenom"
-          onChange={(event) => props.inputChange(event)}
           ref={register({
             required: {
               value: true,
@@ -55,14 +44,13 @@ const CreatePlayer = (props) => {
           id="surname"
           name="surname"
           placeholder="Nom"
-          onChange={(event) => props.inputChange(event)}
           ref={register({
             required: {
               value: true,
               message: "This is required",
             },
             pattern: {
-              value: /(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/,
+              value: /(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/i,
               message: "Invalid format!",
             },
           })}
@@ -74,7 +62,6 @@ const CreatePlayer = (props) => {
           id="email"
           name="email"
           placeholder="Email"
-          onChange={(event) => props.inputChange(event)}
           ref={register({
             required: {
               value: true,
@@ -93,7 +80,6 @@ const CreatePlayer = (props) => {
           id="tel"
           name="tel"
           placeholder="Numéro de téléphone"
-          onChange={(event) => props.inputChange(event)}
           ref={register({
             required: {
               value: true,
@@ -107,18 +93,14 @@ const CreatePlayer = (props) => {
         />
         {errors.tel && <p>{errors.tel.message}</p>}
         <br></br>
-        <button
-          type="submit"
-          // onClick={handleSubmit(onSubmit)}
-          className={classes.Button}
-        >
+        <button type="submit" className={classes.Button}>
           Submit
         </button>
       </form>
       <Modal
-      // show={this.props.modal}
-      // // close={this.onModalClose}
-      // messageId={"playerAvailability"}
+        show={props.modal}
+        close={onModalClose}
+        messageId={"playerAvailability"}
       />
     </div>
   );
@@ -136,7 +118,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    inputChange: (ident) => dispatch(actionCreators.setPlayerInfo(ident)),
     sendInfo: (info) => dispatch(actionCreators.sendPlayerInfo(info)),
     closeModal: () => dispatch(actionCreators.closeModal()),
     openModal: () => dispatch(actionCreators.openModal()),

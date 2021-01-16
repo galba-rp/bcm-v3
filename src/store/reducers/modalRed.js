@@ -9,7 +9,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.CLOSE_MODAL:
         return {
             ...state,
-            modal: false
+            modal: false,
         }
         case actionTypes.OPEN_MODAL:
         return {

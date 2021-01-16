@@ -32,6 +32,24 @@
     color: white;
     cursor: pointer;
 }
+.CardButton{
+    background-color: rgb(209, 228, 245);
+    width: 200px;   
+    height: 200px;
+    font-size: 1.4em;
+    padding: 30px;
+    border-radius: 15px;
+    font-family: 'Changa', cursive;
+    color:rgb(113, 117, 121);
+    font-weight: 200;
+    cursor: pointer;
+    margin: 20px 40px  ;
+}
+
+.CardButton:hover {
+background-color:  rgb(110, 185, 251);
+color: white;
+}
 @media all and (max-height: 760px){
     .MediumButton{
         font-size: 1em;

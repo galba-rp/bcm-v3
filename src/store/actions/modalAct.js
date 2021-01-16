@@ -1,9 +1,10 @@
 import * as actionTypes from "./actionTypes";
 
-export const closeModal = () => {
+export const closeModal = (id) => {
     return {
         type: actionTypes.CLOSE_MODAL,
-        modal: false
+        modal: false,
+        identifier: id
     }
 }
 

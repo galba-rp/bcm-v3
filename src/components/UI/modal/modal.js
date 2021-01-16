@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from "./modal.module.css";
+import { connect } from "react-redux";
 
 const modal = (props) => {
   let message = "error";
@@ -14,7 +15,7 @@ const modal = (props) => {
       )
       break;
       case "playerAvailability":
-        message = "jouer enregistrer"
+        message = props.apiResponse
         break;
       default: ;
   }
@@ -32,5 +33,11 @@ const modal = (props) => {
       </div>
      );
 }
- 
-export default modal;
+
+const mapStateToProps = (state) => {
+  return{ 
+    apiResponse: state.newPlayer.apiResponse,
+  }
+} 
+
+export default connect(mapStateToProps, null)(modal);
