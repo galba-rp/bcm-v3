@@ -1,0 +1,85 @@
+.Container{
+    max-width: 600px;
+    margin: auto;
+    background-color: rgb(209, 228, 245);
+    border-radius: 10px;
+}
+
+.Form {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.Form label {
+    margin-right: 10px;
+}
+
+/* Button {
+    margin-top: 10px;
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    font-weight: 400;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    text-align: center;
+}
+
+Button:hover {
+    background-color: #063b74;
+} */
+
+.SelectedPlayers li {
+    list-style-type: none;
+}
+
+input[type=file]::file-selector-button {
+    border: 2px solid #6c5ce7;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #0973cf;
+    transition: 1s;
+  }
+  
+  input[type=file]::file-selector-button:hover {
+    background-color: #97c7f1;
+    border: 2px solid #00cec9;
+  }
+  
+  img {
+
+      height: 100px;
+      width: 100px;
+  }
+
+  .AddImage {
+      margin-top: 1em;
+  }
+.Image {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Image input {
+    padding: 0.5em 0; 
+    margin-left: 25%;
+} 
+
+img {
+    padding-bottom: 10px;
+}
+
+label {
+    font-family: 'Changa', cursive;
+}
+ .AddCalendar {
+     margin:auto;
+ }

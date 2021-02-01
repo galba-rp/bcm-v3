@@ -14,8 +14,7 @@ export const sendPlayerInfo = (info) => {
         axios 
             .post("/create-player", info)
             .then ((response) => {
-                console.log(response)
-                dispatch(responseMessage('Jouer enregistrer'))
+                response.data ? dispatch(responseMessage("Joueur existe déjà")) : dispatch(responseMessage('Jouer enregistrer'))
             })
             .catch((error) => {
                 dispatch(responseMessage('error'))

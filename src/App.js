@@ -4,9 +4,10 @@ import Header from "./components/header/header";
 import classes from "./App.module.css";
 import Teams from "./components/teams/teams";
 import Team from "./components/teams/team/team";
-import CreateTeam from "./containers/createTeam/CreateTeam";
+import CreateTeam from "./components/teams/createTeam/createTeam";
 import CreatePlayer from "./components/players/createPlayer/createPlayer";
 import Players from './components/players/players';
+import TeamOptions from "./components/teams/teamOptions/teamOptions";
 
 class App extends Component {
   state = {};
@@ -19,7 +20,8 @@ class App extends Component {
             <Route path="/new_player" component={CreatePlayer}/>
             <Route path="/players" component={Players}/>
             <Route path="/new_team" component={CreateTeam}/>
-            <Route path="/teams" component={Teams} />
+            <Route path="/all_teams" component={Teams} />
+            <Route path="/team_options" component={TeamOptions} />
             <Route path="/team/:teamId" component={Team} />
           </Switch>
         </BrowserRouter>

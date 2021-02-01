@@ -1,5 +1,5 @@
 export {selectAvailability, selectPlayer} from './playersAvailabilityAct'
 export {getTeamsInfo } from './teamsAct'
-export {getFormInput } from './createTeamAct'
+export { getPlayers, sendTeam, toggleTable } from './createTeamAct'
 export {sendPlayerInfo} from './createPlayerAct'
 export {closeModal, openModal} from './modalAct'

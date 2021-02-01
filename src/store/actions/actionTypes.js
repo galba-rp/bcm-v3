@@ -7,3 +7,7 @@ export const SET_PLAYER_INFO = "SET_PLAYER_INFO";
 export const PLAYER_SAVED = "PLAYER_SAVED";
 export const OPEN_MODAL  = "OPEN_MODAL";
 export const API_RESPONSE  = "API_RESPONSE";
+export const SET_PLAYERS  = "SET_PLAYERS";
+export const SET_FORM_INPUT = "SET_FORM_INPUT";
+export const SEND_FORM_INPUT = "SEND_FORM_INPUT";
+export const TOGGLE_TABLE = "TOGGLE_TABLE";

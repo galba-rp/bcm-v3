@@ -24,14 +24,32 @@
 }
 
 .MediumButton{
-    background-color: rgb(8, 184, 116);
     font-size: 1.2em;
     padding: 10px;
     border-radius: 5px;
+    margin-top: 20px;
     font-family: 'Changa', cursive;
     color: white;
     cursor: pointer;
+    transition: 1s;
 }
+
+.Submit{
+    background-color: rgb(3, 151, 95);
+}
+.Submit:hover{
+    background-color:rgb(86, 214, 144);
+    cursor: pointer;
+}
+
+.Open{
+    background-color:#0973cf;
+}
+
+.Open:hover {
+    background-color:#97c7f1;
+}
+
 .CardButton{
     background-color: rgb(209, 228, 245);
     width: 200px;   

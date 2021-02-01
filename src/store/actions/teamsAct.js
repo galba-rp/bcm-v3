@@ -14,6 +14,7 @@ export const getTeamsInfo = () => {
       .get("/teams")
       .then((response) => {
         dispatch(setTeamInfo(response.data));
+        console.log(response.data)
       })
       .catch((error) => console.log(error));
   };

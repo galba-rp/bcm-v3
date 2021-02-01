@@ -4,6 +4,7 @@ import React from "react";
 const TeamCard = (props) => {
   let buff = props.teamData.img.data.data;
   let base64String = btoa(String.fromCharCode(...new Uint8Array(buff)));
+  
   return (
     <button
       type="button"

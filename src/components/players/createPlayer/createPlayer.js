@@ -1,6 +1,5 @@
 import classes from "./createPlayer.module.css";
-import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import { useForm } from "react-hook-form";
 import { connect } from "react-redux";
 import * as actionCreators from "../../../store/actions/index";
@@ -9,6 +8,7 @@ import Modal from "../../UI/modal/modal";
 const CreatePlayer = (props) => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data, e) => {
+    data.surname = data.surname.toUpperCase();
     props.sendInfo(data);
     props.openModal();
     e.target.reset();
@@ -50,7 +50,7 @@ const CreatePlayer = (props) => {
               message: "This is required",
             },
             pattern: {
-              value: /(^[A-Z][a-zà-öø-ÿ]+) ?-?([A-Z][a-zà-öø-ÿ]+)? ?-?([A-Z][a-zà-öø-ÿ]+)?$/i,
+              value: /(^[a-zà-öø-ÿ]+) ?-?([a-zà-öø-ÿ]+)? ?-?([a-zà-öø-ÿ]+)?$/i,
               message: "Invalid format!",
             },
           })}
