@@ -11,3 +11,5 @@ export const SET_PLAYERS  = "SET_PLAYERS";
 export const SET_FORM_INPUT = "SET_FORM_INPUT";
 export const SEND_FORM_INPUT = "SEND_FORM_INPUT";
 export const TOGGLE_TABLE = "TOGGLE_TABLE";
+export const SET_SELECTED_PLAYER = "SET_SELECTED_PLAYER"
+export const SET_IMAGE = "SET_IMAGE";

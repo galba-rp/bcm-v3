@@ -16,7 +16,21 @@
 .Form label {
     margin-right: 10px;
 }
+.Table  input {
+    margin-right:15px;
 
+}
+
+.Table div{
+    display: flex
+}
+.Hide {
+    display: none;
+}
+.Show {
+    display: flex;
+    flex-direction: column;
+}
 /* Button {
     margin-top: 10px;
     color: #fff;

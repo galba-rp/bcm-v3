@@ -62,6 +62,12 @@ export const responseMessage = (response) => {
     message: response,
   };
 };
+export const setSelectedPlayer = (data) => {
+  return {
+    type: actionTypes.SET_SELECTED_PLAYER,
+    players: data,
+  };
+};
 
 export const setPlayers = (data) => {
   return {
@@ -74,7 +80,7 @@ export const getPlayers = () => {
   return (dispatch) => {
     axios
       .get("/get-players")
-      .then((response) => {
+      .then((response) => {   
         // console.log(response.data);
         dispatch(setPlayers(response.data));
       })
@@ -90,10 +96,11 @@ export const toggleTable = () => {
     value: true,
   };
 };
-// export const setImage = (image) => {
-//   // console.log(image)
-//   return {
-//     type: actionTypes.SET_IMAGE,
-//     file: image
-//   }
-// }
+
+export const setImage = (image) => {
+
+  return {
+    type: actionTypes.SET_IMAGE,
+    file: image
+  }
+}

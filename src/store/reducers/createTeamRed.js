@@ -5,9 +5,19 @@ const initialState = {
   teamName: "",
   image: {},
   players: [],
-  selectedPlayers: [],
+  selectedPlayers: [{ label: "jhksgahfjks" }],
   message: "",
-  toggleTable: false
+  toggleTable: false,
+  games: [
+    { id: 1, date: "", game: "" },
+    { id: 2, date: "", game: "" },
+    { id: 3, date: "", game: "" },
+    { id: 4, date: "", game: "" },
+    { id: 5, date: "", game: "" },
+    { id: 6, date: "", game: "" },
+    { id: 7, date: "", game: "" },
+    { id: 8, date: "", game: "" },
+  ],
 };
 
 // const setFormInfo = (state, action) => {
@@ -34,14 +44,14 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SET_FORM_INPUT:
-      console.log(action.file)
+      console.log(action.file);
       return {
         ...state,
-       image: {...action.file},
+        image: { ...action.file },
         name: action.name,
-        selectedPlayers: [...action.players]
-      }
-      // setFormInfo(state, action);
+        selectedPlayers: [...action.players],
+      };
+    // setFormInfo(state, action);
     case actionTypes.SET_PLAYERS:
       return {
         ...state,
@@ -52,18 +62,23 @@ const reducer = (state = initialState, action) => {
         ...state,
         message: action.message,
       };
-    case actionTypes.TOGGLE_TABLE: 
-    console.log(action.value)
+    case actionTypes.TOGGLE_TABLE:
+      console.log(action.value);
       return {
-        state,
-        toggleTable: action.value
-      }
-      // case actionTypes.SET_IMAGE:
-      //   console.log(action.file)
-      //   return {
-      //     ...state,
-      //     image: action.file
-      //   }
+        ...state,
+        toggleTable: action.value,
+      };
+    case actionTypes.SET_IMAGE:
+      console.log(action.file);
+      return {
+        ...state,
+        image: action.file,
+      };
+    case actionTypes.SET_SELECTED_PLAYER:
+      return {
+        ...state,
+        selectedPlayers: action.players,
+      };
     default:
       return state;
   }
